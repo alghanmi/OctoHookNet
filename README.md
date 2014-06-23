@@ -51,9 +51,16 @@ Now, pick the version of ruby you want to install and install it
 #List all available ruby versions
 rbenv install -l
 
-#Install v2.1.2
+#Install v2.1.2 (while keeping the source)
 rbenv install 2.1.2 -k
 
 #Set the version of ruby you want to use
 rbenv global 2.1.2
+```
+
+####Sinatra
+Lets install [Sinatra](http://www.sinatrarb.com/) along with some useful gems:
+```bash
+gem install thin
+gem install sinatra
 ```
