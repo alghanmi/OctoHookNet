@@ -36,7 +36,7 @@ class OctoHookNet < Sinatra::Base
 		db_coll = settings.mongo_db['octohooknet']
 		#db_coll = db_connection.collection('octohooknet')
 		#db_cur = db_coll.find('repository.name' => "#{params[:repo]}").to_a
-		JSON.generate( db_coll.find('repository.name' => "#{params[:repo]}").to_a )
+		JSON.pretty_generate( db_coll.find('repository.name' => "#{params[:repo]}").to_a )
 	end
 
 	post '/log' do
