@@ -22,7 +22,7 @@ Here are some development packages needed for the installation of ruby
 sudo aptitude install build-essential libssl-dev libcurl4-openssl-dev libreadline-dev
 ```
 
-####ruby
+####Ruby
 We will install ruby using [rbenv](https://github.com/sstephenson/rbenv). So start by configuring rbenv
 ```bash
 #Clone the rbenv version
@@ -63,4 +63,11 @@ Lets install [Sinatra](http://www.sinatrarb.com/) along with some useful gems:
 ```bash
 gem install thin
 gem install sinatra
+gem install haml
+```
+
+####Unicorn
+[Unicorn](http://unicorn.bogomips.org/) is an application server for Rack applications. This will be used for application deployment
+```bash
+gem install unicorn
 ```
