@@ -27,11 +27,16 @@ class OctoHookNet < Sinatra::Base
 		end
 	end
 
-
-
-
 	get '/' do
 		"Good Morning Dave!"
+	end
+
+	get '/repos/:repo' do
+		content_type :json
+		db_coll = settings.mongo_db['octohooknet']
+		#db_coll = db_connection.collection('octohooknet')
+		#db_cur = db_coll.find('repository.name' => "#{params[:repo]}").to_a
+		JSON.generate( db_coll.find('repository.name' => "#{params[:repo]}").to_a )
 	end
 
 	post '/log' do
@@ -42,6 +47,6 @@ class OctoHookNet < Sinatra::Base
 		content_type :json
 		new_id = settings.mongo_db['octohooknet'].insert data
 		document_by_id(new_id)
-		"ACK"
+		"ACK #{new_id}"
 	end
 end
